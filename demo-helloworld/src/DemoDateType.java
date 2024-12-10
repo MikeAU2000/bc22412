@@ -1,4 +1,4 @@
-public class Helloworld{
+public class DemoDateType{
   public static void main(String[] args) {
     // Comment Welcome to bootcamp!
     // ! 1. Data Type (Primitive)
@@ -41,5 +41,40 @@ public class Helloworld{
 
     int f = 0/10;
     System.out.println(f);
+
+    int value = 1000000;
+    int value2 = 1_000_000;
+
+    byte b1= -128;
+    byte b2= 127;
+
+    //short s1 = -32768 to 32767
+    short s1 = 32767;
+
+    //!long 
+    // !Declare a hardcode long value, you should always add"L"
+    long l1 = 2_147_483_648L;
+
+    //float, fouble
+    double d1= 10.2;// 10.2 is double value
+    double d2= 10.2d;// 10.2d double value
+    float f1 = 10.2f;
+    float f2= 10.22222222222222222222222222f;
+    double d4= 10.2f;
+    double d5= f2 +10.2d;
+    // float + double -> double 
+    System.out.println(d5);
+    double d6 = 0.2 +0.1;
+    System.out.println(d6);
+
+    char c ='x';
+    char c2 = '1';
+    char c3 = '!';
+    int age= 66;
+
+    boolean b= true;
+    boolean b10= false;
+    boolean isElderly = age >65;
+    System.out.println(isElderly); 
   }
 }
