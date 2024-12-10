@@ -76,5 +76,9 @@ public class DemoDateType{
     boolean b10= false;
     boolean isElderly = age >65;
     System.out.println(isElderly); 
+
+    int age2= 18;
+    isElderly = age2 >65;
+    System.out.println(isElderly); 
   }
 }
