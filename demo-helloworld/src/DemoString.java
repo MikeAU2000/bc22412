@@ -52,5 +52,8 @@ public class DemoString{
     System.out.println("Hello".equals(s));
 
     System.out.println("hello".charAt(2));
+    System.out.println("hello".length());
+
+    
   }
 }
