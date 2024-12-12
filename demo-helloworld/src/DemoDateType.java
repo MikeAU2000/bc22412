@@ -39,6 +39,9 @@ public class DemoDateType{
     double x4= 3.0/2;
     System.out.println(x4);
 
+    float x5= (float)(3.0/2);
+    System.out.println("x5="+x5);
+
     int f = 0/10;
     System.out.println(f);
 

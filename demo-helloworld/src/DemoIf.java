@@ -64,7 +64,7 @@ public class DemoIf {
 
     char grade= ' ';
     char gender3= 'F';
-    char gender4= 'M';
+    char gender4= 'M';  
     
     if (score >= 90){
       grade = 'A';
@@ -83,6 +83,11 @@ public class DemoIf {
       grade = 'F';
     }
     System.out.println(grade);
+
+    // 1.M 90-> A
+    // 2.F 90-> A
+    // 3.M 86-> B
+    //....
 
   }
 }
