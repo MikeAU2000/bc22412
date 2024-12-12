@@ -54,6 +54,13 @@ public class DemoString{
     System.out.println("hello".charAt(2));
     System.out.println("hello".length());
 
+    // isEmpty ()
+    String s5= "abc";
+    boolean isEmtry =s5.isEmpty();
+    System.out.println(isEmtry);
+    System.out.println(s5.isEmpty());
     
+    //subString
+    System.out.println(s5.substring(0,2));
   }
 }

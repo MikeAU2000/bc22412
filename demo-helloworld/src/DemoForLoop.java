@@ -40,5 +40,70 @@ public class DemoForLoop {
       sum+=i;
     }
     System.out.println(sum);
+
+    //sum up 0 -10 all the odd number
+    int sum1= 0;
+    for (int i=0; i<11; i++){
+      if(i%2 !=0 ){
+        sum1+= i;
+      }
+    }
+    System.out.println(sum1);
+
+    String str= "abcdefijk";
+    boolean found= false;
+
+    //1. Check if 'd' exits in the string.
+    
+    for(int i=0;i<str.length();i++){
+      if('d'== str.charAt(i)){
+        // System.out.println("k is in the "+(i+1)+" char");
+        found =true;
+        break;
+      }
+    }
+    System.out.println("found it "+found);
+
+    //2.chaeck if the string value contains given sub-string
+    
+    // String substr = "llo";
+    // String str2 = "hello";
+
+    // for(int i= 0; i<str2.length(); i++){
+    //   if(substr.equals(str2.substring(i, i+substr.length()))){
+    //     System.out.println("true");
+    //     break;
+    //   }
+    // }
+
+    String substr = "loq";
+    String str2 = "hello";
+    boolean found1= false;
+    for (int i= 0; i<str2.length()-substr.length();i++){
+      if(substr.equals(str2.substring(i, i+substr.length()))){
+        found1=true;
+        break;
+      }else{
+        found1= false;
+      }
+    }
+    System.out.println(found1);
+
+
+    int oddSum= 0;
+    int evenSum= 0;
+
+    for(int i= 0;i<11;i++){
+      if(i%2 !=0)
+        oddSum += i;
+      else 
+        evenSum +=i;
+    }
+    // if(evenSum>oddSum){
+    // System.out.println(evenSum-oddSum);
+    // }else{System.out.println(oddSum-evenSum);
+    int diff= oddSum >evenSum? oddSum-evenSum: evenSum-oddSum;
+    System.out.println(diff);
+    // }
   }
 }
