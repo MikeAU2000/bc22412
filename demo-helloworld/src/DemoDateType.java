@@ -83,5 +83,23 @@ public class DemoDateType{
     int age2= 18;
     isElderly = age2 >65;
     System.out.println(isElderly); 
+
+    char q ='你'; 
+    char z ='A';
+    char t ='0';
+    int u =q; 
+    int r =z;
+    int p =t;
+    System.out.println(u);
+    System.out.println(r);
+    System.out.println(p);
+
+
+
+
+    char q2= 97;
+    System.out.println(q2);
+    //char q3= 70000;
+
   }
 }
