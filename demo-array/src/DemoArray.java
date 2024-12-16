@@ -1,3 +1,6 @@
+import java.lang.reflect.Array;
+import java.util.Arrays;
+
 public class DemoArray {
   public static void main(String[] args) {
     int x1 = 3;
@@ -50,41 +53,73 @@ public class DemoArray {
     System.out.println(found);
 
     char[] arr4 = new char[] {'b', 'c', 'a'};
-    //conventt teh char value to int value, and then assign them to a new int array
-    //98, 99,97
+    // conventt teh char value to int value, and then assign them to a new int array
+    // 98, 99,97
 
     int[] arr5 = new int[arr4.length];
 
-    for(int i= 0; i<arr4.length; i++){
-      arr5[i]= arr4[i];
-      System.out.print(arr5[i]+" ");
+    for (int i = 0; i < arr4.length; i++) {
+      arr5[i] = arr4[i];
+      System.out.print(arr5[i] + " ");
     }
 
 
     System.out.println();
 
-    //Find the mix ascil value in the int array
+    // Find the mix ascil value in the int array
 
 
-    int maxValue= 0;
-    for(int i= 0;i<arr5.length;i++){
-      if(arr5[i]>maxValue){
+    int maxValue = Integer.MIN_VALUE;
+    for (int i = 0; i < arr5.length; i++) {
+      if (arr5[i] > maxValue) {
         maxValue = arr5[i];
       }
     }
-    System.out.println("The max number is "+maxValue);
+    System.out.println("The max number is " + maxValue);
 
 
-    int[] arr7= new int[]{9,8,99,98};
-    int minValue= arr7[0];
-    for(int i= 0;i<arr7.length;i++){
-      if(arr7[i]<minValue){
+    int[] arr7 = new int[] {9, 8, 99, 98};
+    int minValue = arr7[0];
+    // int min = Integer.MAX_VALUE;
+    for (int i = 0; i < arr7.length; i++) {
+      if (arr7[i] < minValue) {
         minValue = arr7[i];
       }
     }
-    System.out.println("The min number is "+minValue);
+    System.out.println("The min number is " + minValue);
+
+
+    int[] arr6 = new int[] {9, 8, 99, 98};
+    int arr6Sum = 0;
+    for (int i = 0; i < arr6.length; i++) {
+      arr6Sum += arr6[i];
+    }
+
+    System.out.println(arr6Sum);
+
+    // swap
+    int left = 7;
+    int right = 9;
+    int swap = left;
+    left = right;
+    right = swap;
+    System.out.println(left);
+    System.out.println(right);
+
+    int[] arr8 = new int[] {9, -8, 109, 99, 98};
+    System.out.println(arr8);
+
+    int[] arr9 = new int[] {9, -8, 109, 99, 98};
+    for (int i = 0; i < arr9.length - 1; i++) {
+      if (arr9[i] > arr9[i + 1]) {
+        int temp = arr9[i];
+        arr9[i] = arr9[i + 1];
+        arr9[i + 1] = temp;
+      }
+      System.out.println(Arrays.toString(arr9));
 
 
 
+    }
   }
 }
