@@ -1,4 +1,5 @@
 import java.lang.reflect.Array;
+import java.math.BigDecimal;
 import java.util.Arrays;
 
 public class DemoArray {
@@ -121,5 +122,70 @@ public class DemoArray {
 
 
     }
+
+    Integer[] arr2 = new Integer[] {0, 6, 4};
+    // Products for all numbers;
+    int products = 0;
+    for (int i = 0; i < arr2.length; i++) {
+      products *= arr2[i];
+    }
+    System.out.println(products);
+
+
+    double[] price = new double[]{8.2, 6.5, 10.5};
+    int[] guantities = new int[] {9,8,3};
+    BigDecimal d= BigDecimal.valueOf(0.0);
+    for(int i= 0;i<price.length;i++){
+      Integer a= guantities[i];
+      double b= a.doubleValue();
+      d= d.add(BigDecimal.valueOf(price[i]).multiply(BigDecimal.valueOf(b)));
+    }
+    System.out.println(d);
+
+
+    String s = String.valueOf(123);
+    System.out.println(s);
+    s = String.valueOf(true);
+    System.out.println(s);
+
+    System.out.println(String.valueOf("A"));
+
+    Integer i1= Integer.valueOf("123");
+    System.out.println(i1);
+
+    char[] chArr =  "hello".toCharArray();
+
+    System.out.println(chArr);
+    for(int i= 0; i<chArr.length/2; i++){
+      char temp=chArr[i];
+      chArr[i]= chArr[chArr.length-i-1];
+      chArr[chArr.length-i-1]= temp;
+    }
+
+    System.out.println(chArr);
+
+    String result= "";
+    for(int i=0;i<chArr.length;i++){
+      result+= chArr[i];
+    }
+
+    System.out.println(result);
+
+    chArr ="hello".toCharArray();
+
+    int[] intArr= new int[chArr.length];
+    for(int i= 0; i<chArr.length; i++){
+      chArr[i]= ((char)(chArr[i]+1);
+      intArr[i]= chArr[i];
+
+
+    }
+    System.out.println(String.valueOf(chArr));
+
+    char[] arr12= new char[] {'p','a','p','b','a','p'};
+    char maxNumChar= arr12[0];
+
+
+    System.out.println(maxNumChar); //p
   }
 }

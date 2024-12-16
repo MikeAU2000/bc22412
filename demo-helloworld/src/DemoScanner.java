@@ -20,8 +20,8 @@ public class DemoScanner {
     //   System.out.println("Hello");
     // }
 
-    //num ->numbers of days
-    //for loop
+    // num ->numbers of days
+    // for loop
     // int totalMinutes=  0;
     // for(int i= 0; i<dayNum; i++){
     //   totalMinutes+= 24*60;

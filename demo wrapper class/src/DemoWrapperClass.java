@@ -23,12 +23,34 @@ public class DemoWrapperClass {
     double d4 = d2.doubleValue();
 
     // char -> Character
+    char c1= 'a';
+    Character c2=c1;
+    System.out.println(    c2.compareTo('a')    );
+
+    Character c3='c';
+    System.out.println(c3.compareTo('a'));
+
+    int asciiOfA= 'A';
+    int asciiOfa= 'a';
+    System.out.println(asciiOfA-asciiOfa);
     // boolean -> Boolean
+    boolean b1= false;
+    Boolean b2= b1;
+    boolean b3= b2;
+    System.out.println(b2);
+    System.out.println(b3);
+    
+    
+
     // byte -> Byte
     // short -> Short
     // long -> Long
     // float -> Float
 
-    
+
+
+
+
+
   }
 }
