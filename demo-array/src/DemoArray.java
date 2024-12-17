@@ -182,28 +182,51 @@ public class DemoArray {
     }
     System.out.println(String.valueOf(chArr));
 
-    char[] arr12= new char[] {'p','a','p','b','a','p'};
+    // char[] arr12= new char[] {'p','a','p','b','a','p'};
     
 
-    char maxNumChar= arr12[0];
-    int count= 1;
-    int charCount= 1;
+    // char maxNumChar= arr12[0];
+    // int count= 1;
+    // int charCount= 1;
 
 
-    for(int i = 0; i<arr12.length-1; i++){
-      charCount=1;
-      for(int j= i+1; j<arr12.length; j++){
-        if(arr12[i]==arr12[j]){
-          charCount++;
-        }
-      }
-      if(charCount>count){
-        count=charCount;
-        maxNumChar= arr12[i];
-      } 
+    // for(int i = 0; i<arr12.length-1; i++){
+    //   charCount=1;
+    //   for(int j= i+1; j<arr12.length; j++){
+    //     if(arr12[i]==arr12[j]){
+    //       charCount++;
+    //     }
+    //   }
+    //   if(charCount>count){
+    //     count=charCount;
+    //     maxNumChar= arr12[i];
+    //   } 
+
+    // }
+    // System.out.println(maxNumChar);
+    // System.out.println(count);
+
+   
+
+    char[] arr12= new char[] {'p','a','p','b','a','p'};
+    char maxNumChar= ' ';
+
+    int[] counters= new int[26];
+    for(int i=0; i<arr12.length; i++){
+      counters[arr12[i]-'a']++;
 
     }
+    int max2= Integer.MIN_VALUE;
+    for (int i=0; i<counters.length;i++){
+      //max2= Math.max(counters[i], max2);
+      if(counters[i]> max2){
+        maxNumChar=(char)(i+97);
+        max2= counters[i];
+      }
+    }
+
     System.out.println(maxNumChar);
-    System.out.println(count);
+
+
   }
 }
