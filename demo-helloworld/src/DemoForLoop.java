@@ -181,22 +181,38 @@ public class DemoForLoop {
     }
 
     System.out.println();
-    int count=3;
-    int num= 1;
-    int lastNum=1;
-    int lastLastNum=1 ;
-    System.out.print(num+" ");
-    System.out.print(num+" ");
+    int count = 3;
+    int num = 1;
+    int lastNum = 1;
+    int lastLastNum = 1;
+    System.out.print(num + " ");
+    System.out.print(num + " ");
 
-    while(count<21){
-      lastLastNum= lastNum;
-      lastNum= num;
-      num+= lastLastNum;
-      System.out.print(num+" ");
+    while (count < 21) {
+      lastLastNum = lastNum;
+      lastNum = num;
+      num += lastLastNum;
+      System.out.print(num + " ");
       count++;
-
-
-    
     }
+
+    String substr1 = "lo";
+    String str21 = "hello";
+    // hel vs loq
+    // ell vs loq
+    // llo vs loq
+    // for loop + substring
+
+    boolean isSubstringExist = false;
+    for (int i = 0; i < str21.length() - substr1.length() + 1; i++) {
+      if (str21.substring(i, i + substr1.length()).equals(substr1)) {
+        isSubstringExist = true;
+        break;
+      }
+    }
+    System.out.println(isSubstringExist); // true
+
+
+
   }
 }

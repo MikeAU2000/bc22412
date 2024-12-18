@@ -2,23 +2,26 @@ import java.math.BigDecimal;
 
 public class DemoMethod {
 
-  public static int sum(int x, int y){
-    int result= x+y;
+  public static int sum(int x, int y) {
+    int result = x + y;
     return result;
   }
 
-  public static int substract(int x, int y){
-    int result= x-y;
+  // same method name +smae Parameter list //Not allowed
+  // public static int sum(int a, int b){}
+
+  public static int substract(int x, int y) {
+    int result = x - y;
     return result;
   }
 
-  public static int multiply(int x, int y){
-    int result= x*y;
+  public static int multiply(int x, int y) {
+    int result = x * y;
     return result;
   }
 
-  public static BigDecimal sum(double x, double y){
-    BigDecimal bd1=BigDecimal.valueOf(x).add(BigDecimal.valueOf(y));
+  public static BigDecimal sum(double x, double y) {
+    BigDecimal bd1 = BigDecimal.valueOf(x).add(BigDecimal.valueOf(y));
     return bd1;
   }
 
@@ -33,6 +36,7 @@ public class DemoMethod {
 
 
   }
+
   public static void main(String[] args) {
     int x=3;
     int a=10;
@@ -56,5 +60,22 @@ public class DemoMethod {
     String source= "hello";
     char target= 'h';
     System.out.println(countCharacter("", target));
+
+    //need revision
+    System.out.println(countEven(new long[]{100l,200l}));
+
+
+    
+  }
+    public static int countEven(long[] arr){
+
+      int count= 0;
+      for (int i= 0; i<arr.length;i++){
+        if(arr[i] %2==0)
+        count++;
+      }
+            return count;
+          
+      
   }
 }

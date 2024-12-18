@@ -132,13 +132,13 @@ public class DemoArray {
     System.out.println(products);
 
 
-    double[] price = new double[]{8.2, 6.5, 10.5};
-    int[] guantities = new int[] {9,8,3};
-    BigDecimal d= BigDecimal.valueOf(0.0);
-    for(int i= 0;i<price.length;i++){
-      Integer a= guantities[i];
-      double b= a.doubleValue();
-      d= d.add(BigDecimal.valueOf(price[i]).multiply(BigDecimal.valueOf(b)));
+    double[] price = new double[] {8.2, 6.5, 10.5};
+    int[] guantities = new int[] {9, 8, 3};
+    BigDecimal d = BigDecimal.valueOf(0.0);
+    for (int i = 0; i < price.length; i++) {
+      Integer a = guantities[i];
+      double b = a.doubleValue();
+      d = d.add(BigDecimal.valueOf(price[i]).multiply(BigDecimal.valueOf(b)));
     }
     System.out.println(d);
 
@@ -150,40 +150,40 @@ public class DemoArray {
 
     System.out.println(String.valueOf("A"));
 
-    Integer i1= Integer.valueOf("123");
+    Integer i1 = Integer.valueOf("123");
     System.out.println(i1);
 
-    char[] chArr =  "hello".toCharArray();
+    char[] chArr = "hello".toCharArray();
 
     System.out.println(chArr);
-    for(int i= 0; i<chArr.length/2; i++){
-      char temp=chArr[i];
-      chArr[i]= chArr[chArr.length-i-1];
-      chArr[chArr.length-i-1]= temp;
+    for (int i = 0; i < chArr.length / 2; i++) {
+      char temp = chArr[i];
+      chArr[i] = chArr[chArr.length - i - 1];
+      chArr[chArr.length - i - 1] = temp;
     }
 
     System.out.println(chArr);
 
-    String result= "";
-    for(int i=0;i<chArr.length;i++){
-      result+= chArr[i];
+    String result = "";
+    for (int i = 0; i < chArr.length; i++) {
+      result += chArr[i];
     }
 
     System.out.println(result);
 
-    chArr ="hello".toCharArray();
+    chArr = "hello".toCharArray();
 
-    int[] intArr= new int[chArr.length];
-    for(int i= 0; i<chArr.length; i++){
-      chArr[i]= ((char)(chArr[i]+1));
-      intArr[i]= chArr[i];
+    int[] intArr = new int[chArr.length];
+    for (int i = 0; i < chArr.length; i++) {
+      chArr[i] = ((char) (chArr[i] + 1));
+      intArr[i] = chArr[i];
 
 
     }
     System.out.println(String.valueOf(chArr));
 
     // char[] arr12= new char[] {'p','a','p','b','a','p'};
-    
+
 
     // char maxNumChar= arr12[0];
     // int count= 1;
@@ -191,41 +191,81 @@ public class DemoArray {
 
 
     // for(int i = 0; i<arr12.length-1; i++){
-    //   charCount=1;
-    //   for(int j= i+1; j<arr12.length; j++){
-    //     if(arr12[i]==arr12[j]){
-    //       charCount++;
-    //     }
-    //   }
-    //   if(charCount>count){
-    //     count=charCount;
-    //     maxNumChar= arr12[i];
-    //   } 
+    // charCount=1;
+    // for(int j= i+1; j<arr12.length; j++){
+    // if(arr12[i]==arr12[j]){
+    // charCount++;
+    // }
+    // }
+    // if(charCount>count){
+    // count=charCount;
+    // maxNumChar= arr12[i];
+    // }
 
     // }
     // System.out.println(maxNumChar);
     // System.out.println(count);
 
-   
 
-    char[] arr12= new char[] {'p','a','p','b','a','p'};
-    char maxNumChar= ' ';
 
-    int[] counters= new int[26];
-    for(int i=0; i<arr12.length; i++){
-      counters[arr12[i]-'a']++;
+    char[] arr12 = new char[] {'p', 'a', 'p', 'b', 'a', 'p'};
+    char maxNumChar = ' ';
+
+    int[] counters = new int[26];
+    for (int i = 0; i < arr12.length; i++) {
+      counters[arr12[i] - 'a']++;
 
     }
-    int max2= Integer.MIN_VALUE;
-    for (int i=0; i<counters.length;i++){
-      //max2= Math.max(counters[i], max2);
-      if(counters[i]> max2){
-        maxNumChar=(char)(i+97);
-        max2= counters[i];
+    int max2 = Integer.MIN_VALUE;
+    for (int i = 0; i < counters.length; i++) {
+      // max2= Math.max(counters[i], max2);
+      if (counters[i] > max2) {
+        maxNumChar = (char) (i + 97);
+        max2 = counters[i];
       }
     }
 
     System.out.println(maxNumChar);
+
+    String str = "hello";
+    int toToDiff = 0;
+
+    char[] chArr1 = str.toCharArray();
+    for (int i = 0; i < chArr1.length - 1; i++) {
+      int score = chArr1[i];
+      int score1 = chArr1[i + 1];
+      int diff = Math.abs(score1 - score);
+      toToDiff += diff;
+    }
+
+    System.out.println(toToDiff);
+
+
+    String allowed = "cad";
+    String[] words = {"a","b","c","ab","ac","bc","abc"};
+
+
+    int count = 0;
+    boolean foundFalse = false;
+    for (int i = 0; i < words.length; i++) {
+      char[] str2 = words[i].toCharArray();
+      for (int j = 0; j < words[i].toCharArray().length; j++) {
+        char[] str3 = allowed.toCharArray();
+        for (int k = 0; k < str3.length; k++) {
+          if (str2[j] != str3[k]) {
+            foundFalse = false;
+          } else {
+            foundFalse = true;
+          }
+        }
+        if (foundFalse == false) {
+          break;
+        } else {
+          count++;
+        }
+      }
+    }
+    System.out.println(count);
 
 
   }

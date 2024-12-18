@@ -62,5 +62,32 @@ public class DemoString{
     
     //subString
     System.out.println(s5.substring(0,2));
+
+    System.out.println(s.contains("ll"));
+
+    System.out.println(s.concat("!!"));
+    System.out.println(s.startsWith("ha"));
+    System.out.println(s.endsWith("a"));
+    System.out.println(s.toUpperCase());
+
+    System.out.println(s.replace("ll", "xxx"));
+
+    System.out.println(s.replace('e', 'o'));
+
+    System.out.println(s.equalsIgnoreCase("Hello"));
+
+    System.out.println(s.indexOf("He"));
+    System.out.println(s.indexOf('h'));
+    System.out.println(s.lastIndexOf('l'));
+    System.out.println("Hellollo".lastIndexOf("ll"));
+    System.out.println("".isEmpty());
+
+    System.out.println(s.isBlank());
+    System.out.println(" hel lo ".trim());
+    System.out.println("abc".compareTo("sbr"));
+
+    System.out.println("hello".concat("ijk").toUpperCase());
+
+    
   }
 }
