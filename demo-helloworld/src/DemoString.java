@@ -49,13 +49,15 @@ public class DemoString{
     System.out.println(isStringEmptry);
 
     String s = "Hello";
+    int ge= 123;
     System.out.println("Hello".equals(s));
 
     System.out.println("hello".charAt(2));
     System.out.println("hello".length());
+    
 
     // isEmpty ()
-    String s5= "abc";
+    String s5= "abc".c;
     boolean isEmtry =s5.isEmpty();
     System.out.println(isEmtry);
     System.out.println(s5.isEmpty());
@@ -63,16 +65,16 @@ public class DemoString{
     //subString
     System.out.println(s5.substring(0,2));
 
-    System.out.println(s.contains("ll"));
+    System.out.println(s.contains("e"));
 
     System.out.println(s.concat("!!"));
     System.out.println(s.startsWith("ha"));
     System.out.println(s.endsWith("a"));
     System.out.println(s.toUpperCase());
 
-    System.out.println(s.replace("ll", "xxx"));
+  
 
-    System.out.println(s.replace('e', 'o'));
+  
 
     System.out.println(s.equalsIgnoreCase("Hello"));
 
@@ -88,6 +90,6 @@ public class DemoString{
 
     System.out.println("hello".concat("ijk").toUpperCase());
 
-    
+    System.out.println(s.replace("l", "s"));
   }
 }

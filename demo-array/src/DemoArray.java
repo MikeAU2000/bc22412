@@ -242,7 +242,7 @@ public class DemoArray {
 
 
     String allowed = "cad";
-    String[] words = {"a","b","c","ab","ac","bc","abc"};
+    String[] words = {"a", "b", "c", "ab", "ac", "bc", "abc"};
 
 
     int count = 0;
@@ -267,6 +267,19 @@ public class DemoArray {
     }
     System.out.println(count);
 
+    int[] arr20 = new int[] {20, -20, 90, 50, -40};
+
+    for (int i = 0; i < arr20.length - 1; i++) {
+      for (int j = 0; j < arr20.length -i - 1; j++) {
+        if (arr20[j] > arr20[j + 1]) {
+          int temp = arr20[j];
+          arr20[j] = arr20[j + 1];
+          arr20[j + 1] = temp;
+        }
+      }
+
+    }
+    System.out.println(Arrays.toString(arr20));
 
   }
 }

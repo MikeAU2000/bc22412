@@ -70,14 +70,5 @@ public class DemoWhileLoop {
     
   }
 
-  public static boolean isDuplicated(int[] arr, int newValue) {
-    for (int i = 0; i < arr.length; i++) {
-      if (arr[i] == newValue) {
-        return true;
-      }
-
-
-    }
-    return false;
-  }
+  
 }
