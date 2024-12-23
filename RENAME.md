@@ -13,3 +13,14 @@
 - for (int i = 0; i < 3; i++) {}
 - for +if (loop all elements + filtering)
   - Searching (for + if)
+## Week 2
+- while loop (difference between for loop and while loop)
+- for-each loop(simple design for loop: one element per iteration)
+- 8 wrapper classes (8 primitives)
+- string methods
+- Methods (Similar to Formula)
+  - Input parameters
+  - Return type
+  - Method name
+  - Method Signature = input params +method name
+- BigDeciaml for math calculation
