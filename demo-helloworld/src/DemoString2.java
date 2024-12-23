@@ -1,4 +1,4 @@
-public class DemoString2{
+public class DemoString2 {
   public static void main(String [] args){
     char x = 'a';
     x ='a';
@@ -39,10 +39,14 @@ public class DemoString2{
     System.out.println(isStringEmptry);
 
     String s= "Hello";
+    System.out.println(String.valueOf(len));
     System.out.println("Hello".equals(s));
 
     System.out.println("hello".charAt(2));
 
     System.out.println("hello".length());
+            
+
+        
   }
 }

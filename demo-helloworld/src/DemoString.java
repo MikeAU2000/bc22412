@@ -71,6 +71,7 @@ public class DemoString{
     System.out.println(s.startsWith("ha"));
     System.out.println(s.endsWith("a"));
     System.out.println(s.toUpperCase());
+    System.out.println(s.toCharArray());
 
   
 
@@ -91,5 +92,10 @@ public class DemoString{
     System.out.println("hello".concat("ijk").toUpperCase());
 
     System.out.println(s.replace("l", "s"));
+
+    String s19= "19";
+
+    System.out.println(Integer.parseInt(s19));
+    
   }
 }

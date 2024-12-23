@@ -4,6 +4,10 @@ public class MyFriends {
   private char gender;
   private boolean havePet;
 
+  public int getNameLength (){
+    return this.name.length();
+  }
+
   public String getName (){
     return this.name;
   }
@@ -12,8 +16,8 @@ public class MyFriends {
     return this.age;
   }
 
-  public char getGender(){
-    return this.gender;
+  public boolean isMale(){
+    return this.gender=='M'?true: false;
   }
 
   public boolean getHavePet(){
@@ -48,6 +52,6 @@ public class MyFriends {
     MyFriends mf3= new MyFriends("Ada", 23, 'f', false);
     MyFriends mf4= new MyFriends("Hin", 22, 'm', false);
 
-    System.out.println(mf1.getName()+" "+mf1.getAge()+" "+mf1.getGender()+" "+mf1.getHavePet());
+    System.out.println(mf1.getName()+" "+mf1.getAge()+" "+mf1.isMale()+" "+mf1.getHavePet());
   }
 }
