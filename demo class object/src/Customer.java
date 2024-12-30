@@ -114,7 +114,7 @@ public class Customer {
     System.out.println(c1.getOrderPrice(12));
     System.out.println(c1.totalOrderAmount(12));
     System.out.println(c1.getTotalOrderPrice());
-      
+    System.out.println(c1.isVip());
   }
     
 
