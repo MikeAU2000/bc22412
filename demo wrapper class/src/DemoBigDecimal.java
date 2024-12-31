@@ -74,7 +74,7 @@ public class DemoBigDecimal {
 
     double u=3.456;
     System.out.println(Math.round(u));
-    System.out.println(Math.round(u));
+    System.out.println(Math.pow(10, 10));
 
     double u2= 3.556;
     System.out.println(Math.round(u2));
@@ -83,7 +83,7 @@ public class DemoBigDecimal {
 
     System.out.println(Math.abs(-9L));
 
-    
+    System.out.println(Math.pow(10, 1));
 
     }
 }

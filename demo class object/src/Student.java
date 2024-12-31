@@ -1,7 +1,10 @@
+import java.util.Arrays;
+
 public class Student {
   private int score;
   private String name;
-  private int candies=0;
+  //private int candies=0;
+  private Candy[] candies=new Candy[0];
 
   public Student(){
 
@@ -11,7 +14,6 @@ public class Student {
   public Student(int score, String name){
     this.score=score;
     this.name=name;
-    this.candies=0;
   }
 
   public int getScore(){
@@ -22,12 +24,32 @@ public class Student {
     return this.name;
   }
 
-  public int getCandies(){
+  public Candy[] getCandies(){
     return this.candies;
   }
 
-  public void addCandies(int addNumber){
-    this.candies+=addNumber;
+
+
+  public Candy getCandy(int score){
+    Candy candy=new Candy();
+    if(score>=80){
+      candy= new Candy("red");
+    }else if(score>=60 && score <= 79){
+      candy= new Candy("Blue");
+    }else {
+      candy= new Candy("Yellow");
+    }
+    return candy;
+  }
+
+  public Candy[] addCandy(Candy[] candies, Candy candy){
+    Candy[] newcandies= new Candy[candies.length+1];
+    for(int i=0;i<candies.length;i++){
+      newcandies[i]=candies[i];
+    }
+    newcandies[newcandies.length-1]=candy;
+    this.candies=newcandies;
+    return newcandies;
   }
 
   public static void main(String[] args) {
@@ -43,22 +65,25 @@ public class Student {
     
     while(remainCandies>0){
       for (Student student : students) {
-        if(student.getScore()>=80 && remainCandies>=2){
-          student.addCandies(2);
-          remainCandies -= 2;
-        }else if(student.getScore()>=60 && student.getScore() <=79){
-          student.addCandies(1);
-          remainCandies -= 1;
-        }else {
-          continue;
-        }
-        if(remainCandies<0){
+        if(remainCandies==0){
           break;
-      }
+        }
+        Candy candy=student.getCandy(student.getScore());
+        student.addCandy(student.candies, candy);
+        remainCandies--;
+        // if(remainCandies==0){
+        //   break;
+        // }
       }
     }
+
     for (Student student : students) {
-      System.out.println(student.getName()+" "+student.getCandies());
+      
+      for (Candy candy : student.candies) {
+        System.out.print(candy.getColor());
+        
+      }
+      System.out.println();
     }
   }
 
