@@ -1,12 +1,14 @@
 public class Librarian {
   private String name;
+  private Library library;
 
   public Librarian(){
 
   }
 
-  public Librarian(String name){
+  public Librarian(String name,Library library){
     this.name=name;
+    this.library=library;
   }
 
   public String getName() {
@@ -25,7 +27,7 @@ public class Librarian {
     }
 
     newBookArr[newBookArr.length-1]=book;
-    Library.books=newBookArr;
+    this.library.setBooks(newBookArr);
   }
 
   public Book removeBook(Book[] books, String name){
@@ -46,7 +48,7 @@ public class Librarian {
       newBook[i]=books[i+1];
     }
 
-    Library.books=newBook;
+    this.library.setBooks(newBook);
 
     return removeBook;
   }

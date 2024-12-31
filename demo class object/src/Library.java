@@ -1,6 +1,7 @@
 import java.lang.reflect.Array;
 import java.util.Arrays;
 
+
 public class Library{
   //A library has many books
   //A book has Attribute, title and author
@@ -9,38 +10,59 @@ public class Library{
     // 2) removeByTitle, return Book.
     // 3) searchByTitle, return Book[]
 
-    public static Book[] books= new Book[0];
+    private Book[] books= new Book[0];
+
+
+
 
     private Librarian librarian= new Librarian();
     
 
-    public Library(Librarian librarian){
-      this.librarian= librarian;
+    public Library(){
+
     }
+
+    public Library(Book[] books){
+      this.books= books;
+    }
+
+    public void setBooks(Book[] books) {
+      this.books = books;
+    }
+
+    public void setLibrarian(Librarian librarian) {
+      this.librarian = librarian;
+    }
+
+    
 
 
     public static void main(String[] args) {
       Book b1= new Book("history", "Mike");
       Book b2= new Book("game", "Joe");
       Book b3= new Book("music", "gg");
-      Librarian librarian1=new Librarian("Jack");
-      Library l1= new Library(librarian1);
-      l1.librarian.addBooks(Library.books,b1);
-      l1.librarian.addBooks(Library.books,b2);
-      l1.librarian.addBooks(Library.books,b3);
+      Library l1= new Library();
+      Librarian librarian1=new Librarian("Jack",l1);
+      l1.setLibrarian(librarian1);
+      l1.librarian.addBooks(l1.books,b1);
+      l1.librarian.addBooks(l1.books,b2);
+      l1.librarian.addBooks(l1.books,b3);
 
-      for (Book b: Library.books) {
-        System.out.println(b.getTitle()+" "+b.getAuthor());
-      }
-
-      // l1.librarian.removeBook(Library.books, "game");
-
-      // for (Book b: Library.books) {
+      // for (Book b: l1.books) {
       //   System.out.println(b.getTitle()+" "+b.getAuthor());
       // }
 
-      for (Book book : l1.librarian.searchByTitle(Library.books, "s")) {
-        System.out.println(book.getTitle());
+      // l1.librarian.removeBook(l1.books, "game");
+
+      // for (Book b: l1.books) {
+      //   System.out.println(b.getTitle()+" "+b.getAuthor());
+      // }
+
+      l1.librarian.searchByTitle(l1.books, "s");
+
+      for (Book b: l1.librarian.searchByTitle(l1.books, "s")
+      ) {
+        System.out.println(b.getTitle()+" "+b.getAuthor());
       }
     }
 
