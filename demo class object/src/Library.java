@@ -9,14 +9,15 @@ public class Library{
     // 2) removeByTitle, return Book.
     // 3) searchByTitle, return Book[]
 
-    private Book[] books= new Book[0];
+    public static Book[] books= new Book[0];
+
     private Librarian librarian= new Librarian();
     
 
     public Library(Librarian librarian){
-      this.books= new Book[0];
       this.librarian= librarian;
     }
+
 
     public static void main(String[] args) {
       Book b1= new Book("history", "Mike");
@@ -24,21 +25,21 @@ public class Library{
       Book b3= new Book("music", "gg");
       Librarian librarian1=new Librarian("Jack");
       Library l1= new Library(librarian1);
-      l1.books=l1.librarian.addBooks(l1.books,b1);
-      l1.books=l1.librarian.addBooks(l1.books,b2);
-      l1.books=l1.librarian.addBooks(l1.books,b3);
+      l1.librarian.addBooks(Library.books,b1);
+      l1.librarian.addBooks(Library.books,b2);
+      l1.librarian.addBooks(Library.books,b3);
 
-      for (Book b: l1.books) {
+      for (Book b: Library.books) {
         System.out.println(b.getTitle()+" "+b.getAuthor());
-      
-
       }
 
-      // for (Book book : l1.librarian.removeBook(l1.books, "game")) {
-      //   System.out.println(book.getTitle());
+      // l1.librarian.removeBook(Library.books, "game");
+
+      // for (Book b: Library.books) {
+      //   System.out.println(b.getTitle()+" "+b.getAuthor());
       // }
 
-      for (Book book : l1.librarian.searchByTitle(l1.books, "s")) {
+      for (Book book : l1.librarian.searchByTitle(Library.books, "s")) {
         System.out.println(book.getTitle());
       }
     }

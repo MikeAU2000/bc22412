@@ -18,17 +18,17 @@ public class Librarian {
     this.name = name;
   }
 
-  public Book[] addBooks(Book[] books, Book book){
+  public void addBooks(Book[] books, Book book){
     Book[] newBookArr= new Book[books.length+1];
     for(int i=0;i<books.length;i++){
       newBookArr[i]=books[i];
     }
 
     newBookArr[newBookArr.length-1]=book;
-    return newBookArr;
+    Library.books=newBookArr;
   }
 
-  public Book[] removeBook(Book[] books, String name){
+  public Book removeBook(Book[] books, String name){
     Book []newBook= new Book[books.length-1];
     int removeIndex= 0;
     Book removeBook=null;
@@ -46,9 +46,9 @@ public class Librarian {
       newBook[i]=books[i+1];
     }
 
-    books=newBook;
+    Library.books=newBook;
 
-    return books;
+    return removeBook;
   }
 
   public Book[] searchByTitle(Book[] books, String name){
