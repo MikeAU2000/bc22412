@@ -1,16 +1,20 @@
 public class Student2 {
   private String name;
   private int score;
-  private int candyAmount=0;
+  private Candy2[] Candies = new Candy2[0];
 
 
-  public Student2(){
+  public void setCandies(Candy2[] candies) {
+    Candies = candies;
+  }
+
+  public Student2() {
 
   }
 
-  public Student2(String name,int score){
-    this.name=name;
-    this.score=score;
+  public Student2(String name, int score) {
+    this.name = name;
+    this.score = score;
   }
 
   public String getName() {
@@ -21,44 +25,33 @@ public class Student2 {
     return score;
   }
 
-  public int getCandyAmount() {
-    return candyAmount;
+  public Candy2[] getCandies() {
+    return Candies;
   }
 
-  public void addCandyAmount(int num) {
-    this.candyAmount+= num;
-  }
-
-
-  public static void main(String[] args) {
-    Student2 s1= new Student2("student1", 67);
-    Student2 s2= new Student2("student2", 89);
-    Student2 s3= new Student2("student3", 50);
-    Student2 s4= new Student2("student4", 99);
-    Student2 s5= new Student2("student5", 60);
-    Student2 s6= new Student2("student6", 59);
-    Student2[] stuArr= new Student2[]{s1,s2,s3,s4,s5,s6};
-    int candyNum=20;
-    boolean remainCandies=true;
-    while(remainCandies){
-      for (Student2 student2 : stuArr) {
-        if(student2.getScore()>=80 && candyNum>1){
-          student2.addCandyAmount(2);
-          candyNum-=2;
-        }else if(student2.getScore()>=60 && student2.getScore()<80){
-          student2.addCandyAmount(1);
-          candyNum-=1;
-        }else{
-          continue;
-        }
-        if(candyNum<=0){
-          remainCandies=false;
-          break;
-        }
-      }
+  public Candy2 getTheCandy2(int score) {
+    Candy2 candy2 = new Candy2();
+    if (score >= 80) {
+      candy2 = new Candy2("red");
+    } else if (score >= 60) {
+      candy2 = new Candy2("blue");
+    } else {
+      candy2 = new Candy2("yellow");
     }
-    for (Student2 student2 : stuArr) {
-      System.out.println(student2.getName()+" "+student2.getCandyAmount());
-    }
+    return candy2;
   }
+
+  public Candy2[] addCandy2(Candy2[] candy2s, Candy2 candy2) {
+    Candy2[] newCandy2Arr = new Candy2[candy2s.length + 1];
+    for (int i = 0; i < candy2s.length; i++) {
+      newCandy2Arr[i] = candy2s[i];
+    }
+    newCandy2Arr[candy2s.length] = candy2;
+
+    return newCandy2Arr;
+  }
+
+
+ 
+  
 }

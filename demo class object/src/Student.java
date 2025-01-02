@@ -71,9 +71,6 @@ public class Student {
         Candy candy=student.getCandy(student.getScore());
         student.addCandy(student.candies, candy);
         remainCandies--;
-        // if(remainCandies==0){
-        //   break;
-        // }
       }
     }
 

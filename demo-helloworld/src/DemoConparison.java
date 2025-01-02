@@ -27,6 +27,7 @@ public class DemoConparison {
     System.out.println(result2);
 
     age2= 30;
+    System.out.println(Integer.);
     gender2='F';
     boolean result3= age2 >= 30 || gender2 =='M';
     System.out.println(result3);

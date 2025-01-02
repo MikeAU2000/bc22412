@@ -15,6 +15,13 @@ public class Library{
 
 
 
+    public Book[] getBooks() {
+      return books;
+    }
+
+
+
+
     private Librarian librarian= new Librarian();
     
 
@@ -44,23 +51,23 @@ public class Library{
       Library l1= new Library();
       Librarian librarian1=new Librarian("Jack",l1);
       l1.setLibrarian(librarian1);
-      l1.librarian.addBooks(l1.books,b1);
-      l1.librarian.addBooks(l1.books,b2);
-      l1.librarian.addBooks(l1.books,b3);
+      l1.librarian.addBooks(b1);
+      l1.librarian.addBooks(b2);
+      l1.librarian.addBooks(b3);
 
       // for (Book b: l1.books) {
       //   System.out.println(b.getTitle()+" "+b.getAuthor());
       // }
 
-      // l1.librarian.removeBook(l1.books, "game");
+      l1.librarian.removeBook( "game");
 
-      // for (Book b: l1.books) {
-      //   System.out.println(b.getTitle()+" "+b.getAuthor());
-      // }
+      for (Book b: l1.books) {
+        System.out.println(b.getTitle()+" "+b.getAuthor());
+      }
 
-      l1.librarian.searchByTitle(l1.books, "s");
+      l1.librarian.searchByTitle("s");
 
-      for (Book b: l1.librarian.searchByTitle(l1.books, "s")
+      for (Book b: l1.librarian.searchByTitle( "s")
       ) {
         System.out.println(b.getTitle()+" "+b.getAuthor());
       }

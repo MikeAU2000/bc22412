@@ -83,7 +83,7 @@ public class DemoBigDecimal {
 
     System.out.println(Math.abs(-9L));
 
-    System.out.println(Math.pow(10, 1));
+    System.out.println(10*(int)Math.pow(10, 2));
 
     }
 }
