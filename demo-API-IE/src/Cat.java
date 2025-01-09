@@ -1,4 +1,4 @@
-public class Cat extends Animal{
+public class Cat extends Animal implements Walkable{
   private int age;
 
   public Cat(){}
@@ -8,9 +8,14 @@ public class Cat extends Animal{
     this.age= age;
   }
 
-
+  @Override
   public void walk(){
     System.out.println("Cat is walking...");
+  }
+
+  @Override
+  public void eat(){
+    System.out.println("Cat is eating ");
   }
 
   public static void main(String[] args) {
@@ -19,5 +24,6 @@ public class Cat extends Animal{
     System.out.println(cat.getName());
     cat.setName("Mike");
     System.out.println(cat.getName());
+    cat.eat();
   }
 }
