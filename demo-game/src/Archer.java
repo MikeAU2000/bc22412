@@ -1,11 +1,21 @@
 public class Archer extends Hero{
+  private Bow bow;
 
   public Archer(){}
   
-  public Archer(String name) {
+  public Archer(String name,Bow bow) {
     super(name);
     this.setHp(Archers.HP_ARR[this.getLevel()]);
     this.setMp(Archers.MP_ARR[this.getLevel()]);
+    this.setBow(bow);
+  }
+
+  public Bow getBow() {
+    return bow;
+  }
+
+  public void setBow(Bow bow) {
+    this.bow = bow;
   }
 
   public int getPa(){
@@ -13,12 +23,12 @@ public class Archer extends Hero{
   }
 
   public void attack(Hero hero){
-    hero.attacked(this,this.getPa());
+    hero.attacked(this,this.getPa()+this.getBow().getWeaponPa());
   }
 
   public void attacked(Hero hero,int demand){
     this.setHp(this.getHp()-(demand-Archers.PD_ARR[this.getLevel()]));
-    System.out.println(this.getName()+" under attack from "+ hero.getName());
+    System.out.println(this.getName()+" under attack from "+ hero.getName()+" the total demand is "+(demand-Archers.MD_ARR[this.getLevel()]));
     isAlive();
   }
 
@@ -28,7 +38,7 @@ public class Archer extends Hero{
 
   public void magicalAttacked(Hero hero,int demand){
     this.setHp(this.getHp()-(demand-Archers.MD_ARR[this.getLevel()]));
-    System.out.println(this.getName()+" under magical attack from "+ hero.getName());
+    System.out.println(this.getName()+" under magical attack from "+ hero.getName()+",the total demand is "+(demand-Archers.MD_ARR[this.getLevel()]));
     isAlive();
   }
 
@@ -45,16 +55,11 @@ public class Archer extends Hero{
   }
 
   public static void main(String[] args) {
-    Archer archer1= new Archer("archer1");
-    Archer archer2= new Archer("archer2");
+    Bow bow= new Bow();
+    Archer archer1= new Archer("archer1",bow);
+    Archer archer2= new Archer("archer2",bow);
     Warrior warrior1= new Warrior("warrior1");
     archer1.attack(archer2);
-    archer2.magicalAttack(archer1);
-    System.out.println(archer2.getHp());
-    System.out.println(archer1.getHp());
-    archer2.levelUp();
-    archer2.levelUp();
-    archer2.magicalAttack(archer1);
     System.out.println(archer2.getHp());
     System.out.println(archer1.getHp());
 
